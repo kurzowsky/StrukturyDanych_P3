@@ -87,6 +87,11 @@ public:
         }
         return false;
     }
+
+    int getSize() {
+        return num_elements;
+    }
+
 };
 
 #endif 
