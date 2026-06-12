@@ -43,7 +43,7 @@ public:
         int hashIndex = calcHash(key);
         int i = 0;
 
-        // linear probing - szukamy wolnego miejsca lub istniej¹cego klucza do nadpisania
+        // linear probing - szukamy wolnego miejsca lub istniejÂ¹cego klucza do nadpisania
         while (oa_table[hashIndex].state == OCCUPIED && oa_table[hashIndex].key != key) {
             i++;
             hashIndex = (calcHash(key) + i) % max_size;
@@ -78,6 +78,10 @@ public:
             }
         }
         return false;
+    }
+
+    int getSize() {
+        return num_items;
     }
 };
 
