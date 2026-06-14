@@ -55,14 +55,16 @@ public:
     }
 
 	// usuniêcie pary o danym kluczu
-    void remove(int key) {
+    bool remove(int key) {
         int index = hashFunction(key);
 
 		// czy istnieje klucz
         if (avl.search(table[index], key) != nullptr) {
             table[index] = avl.remove(table[index], key);
 			size--; // redukujemy rozmiar s³ownika
+			return true;
         }
+		return false;
     }
 
     // size
